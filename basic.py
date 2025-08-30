@@ -119,3 +119,12 @@ print(f'vmap batch calculation: {end-start}')
 print(jnp.allclose(batched_calculation_vmap(X), batched_calculation_la(X), atol=1E-4, rtol=1E-4))
 
 # Randomness
+
+key = jax.random.key(1)
+key1, key2 = jax.random.split(key)
+key3, key4 = jax.random.split(key1)
+keys = jax.random.split(key, 10)
+print(keys)
+
+
+
